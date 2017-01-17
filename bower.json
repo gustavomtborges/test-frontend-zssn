@@ -1,0 +1,20 @@
+{
+  "name": "test-frontend-zssn",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Gustavo M T Borges"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/gustavomtborges/test-frontend-zssn",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.97.8"
+  }
+}
