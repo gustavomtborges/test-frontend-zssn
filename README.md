@@ -1,1 +1,1 @@
-# Test Front-end ZSSN (Zumbi Survival Social Network)
+# Test Frontend ZSSN (Zumbi Survival Social Network)
