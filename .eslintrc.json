@@ -1,6 +1,13 @@
 {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ]
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "angular": true
+    },
+    "rules": {
+        "no-console": "warn"
+    }
 }
