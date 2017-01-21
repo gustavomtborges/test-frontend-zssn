@@ -4,7 +4,7 @@ var eslint = require('gulp-eslint');
 
 var paths = {
   jsFiles: ['*.js', 'public/app/**/*.js'],
-  cssFiles: ['public/css/**/*.css']
+  cssFiles: ['public/css/*.css', 'public/css/**/*.css']
 };
 
 gulp.task('lint', function () {
