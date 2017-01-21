@@ -1,5 +1,11 @@
-.google-maps {
+.google-maps-small {
   position: relative;
   width: 100%;
   min-height: 10em;
+}
+
+.google-maps-medium {
+  position: relative;
+  width: 100%;
+  min-height: 15em;
 }

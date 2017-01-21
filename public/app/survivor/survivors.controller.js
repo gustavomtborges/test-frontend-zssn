@@ -27,8 +27,8 @@
 
     // success on fetch survivors
     function fetchSurvivorsSucsess(response) {
-      controller.survivors = response.data;
-      controller.filteredSurvivors = response.data.slice(beginOffset, endOffset);
+      controller.survivors = response.data.reverse();
+      controller.filteredSurvivors = controller.survivors.slice(beginOffset, endOffset);
       calculatePageNumbers(response.data.length);
 
       var deferred = $q.defer();
