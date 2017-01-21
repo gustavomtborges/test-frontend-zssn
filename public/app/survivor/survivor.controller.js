@@ -29,7 +29,7 @@
     function fetchSurvivorsSucsess(response) {
       controller.survivors = response.data;
       controller.filteredSurvivors = response.data.slice(beginOffset, endOffset);
-      calculateNumberPages(response.data.length);
+      calculatePageNumbers(response.data.length);
 
       var deferred = $q.defer();
       deferred.resolve(controller.filteredSurvivors);
@@ -44,8 +44,8 @@
     }
 
 
-    // calc page numbers from pagination
-    function calculateNumberPages(length) {
+    // calc page numbers
+    function calculatePageNumbers(length) {
       var i = 0;
       var survivorsLength = (length / 20).toFixed(0);
       for (; survivorsLength > i; ++i) {
