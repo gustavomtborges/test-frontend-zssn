@@ -5,7 +5,8 @@
     },
     "extends": "eslint:recommended",
     "globals": {
-        "angular": true
+        "angular": true,
+        "google": true
     },
     "rules": {
         "no-console": "warn",
