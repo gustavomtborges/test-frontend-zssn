@@ -8,6 +8,9 @@
         "angular": true
     },
     "rules": {
-        "no-console": "warn"
+        "no-console": "warn",
+        "eqeqeq": 1,
+        "quotes": ["error", "single"],
+        "semi": "error"
     }
 }
