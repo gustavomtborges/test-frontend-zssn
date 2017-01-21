@@ -1,0 +1,29 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h1 class="header center orange-text">Survivors</h1>
+  </div>
+</div>
+<div class="col s12 m7" ng-repeat="survivor in survivorCtrl.filteredSurvivors">
+  <div class="card horizontal">
+    <div class="card-image">
+      <div ng-show="survivor.lonlat" id="{{survivor.location}}" style="width: 15vw; height: 20vh"></div>
+      <div ng-show="!survivor.lonlat" style="width: 15vw; height: 20vh"><p class="center-align">Widout location</p> </div>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>Name: {{survivor.name}}</p>
+        <p>Age: {{survivor.age}}</p>
+        <p>Gender: {{survivor.gender}}</p>
+        <a href="#!" title="Infected" ng-if="'survivor.infected?'"><i class="material-icons red-text">warning</i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="pagination">
+  <li class="waves-effect" ng-class="{'disabled' : survivorCtrl.currentPage === 0 }"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+
+  <li class="waves-effect" ng-class="{'active': survivorCtrl.currentPage === $index }" ng-repeat="page in survivorCtrl.pages" ng-click="survivorCtrl.changePage($index);"><a>{{page.number}}</a></li>
+
+  <li class="waves-effect" ng-class="{'disabled': survivorCtrl.currentPage === survivorCtrl.survivors.length }"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+</ul>
