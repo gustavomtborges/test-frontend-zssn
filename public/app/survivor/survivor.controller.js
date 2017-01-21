@@ -18,12 +18,14 @@
     // controller functions
     controller.changePage = changePage;
 
-
+    // api call to fetch survivors
     survivorService.fetch()
       .then(fetchSurvivorsSucsess)
       .then(drawMap)
       .catch(fetchSurvivorsError);
 
+
+    // success on fetch survivors
     function fetchSurvivorsSucsess(response) {
       controller.survivors = response.data;
       controller.filteredSurvivors = response.data.slice(beginOffset, endOffset);
@@ -35,11 +37,14 @@
       return deferred.promise;
     }
 
+    // error on fetch survivors
     function fetchSurvivorsError(error) {
       alert('A error occourred on fetch survivors');
       console.log(error);
     }
 
+
+    // calc page numbers from pagination
     function calculateNumberPages(length) {
       var i = 0;
       var survivorsLength = (length / 20).toFixed(0);
@@ -48,6 +53,7 @@
       }
     }
 
+    // draw google maps
     function drawMap(array) {
       $timeout(function () {
         var i = 0;
@@ -64,8 +70,8 @@
       });
     }
 
-    function changePage(pageIndex) {
-      event.preventDefault();
+    // change page
+    function changePage(pageIndex) {      
       beginOffset = (pageIndex * 20);
       endOffset = (pageIndex * 20) + 19;
       controller.currentPage = pageIndex;
@@ -73,4 +79,5 @@
       drawMap(controller.filteredSurvivors);
     }
   }
+
 })();
