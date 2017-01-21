@@ -1,42 +1,46 @@
+<header>
+  <nav class="red darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ZSSN</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a ui-sref="menu.home">HOME</a></li>
+        <li><a ui-sref="menu.survivor">SURVIVORS</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#" class="subheader">ZSSN</a></li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <li><a ui-sref="menu.home">HOME</a></li>
+        <li><a ui-sref="menu.survivor">SURVIVORS</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <ui-view name="menuContent"></ui-view>
+  </div>
+</main>
+
+<footer class="page-footer red darken-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">ZSSN</h5>
+        <p class="grey-text text-lighten-4">Zumbi Survival Social Network</p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made with <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+</footer>
+
 <script>
   // Initialize collapse button
   $(".button-collapse").sideNav({ closeOnClick: true });
 </script>
-
-<nav class="red darken-3" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ZSSN</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a ui-sref="menu.home">HOME</a></li>
-      <li><a ui-sref="menu.survivor">SURVIVORS</a></li>
-    </ul>
-
-    <ul id="nav-mobile" class="side-nav">
-      <li><a href="#" class="subheader">ZSSN</a></li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li><a ui-sref="menu.home">HOME</a></li>
-      <li><a ui-sref="menu.survivor">SURVIVORS</a></li>
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
-
-<div class="container">
-  <ui-view name="menuContent"></ui-view>
-</div>
-
-<footer class="page-footer orange">
-  <div class="container">
-    <div class="row">
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-    </div>
-  </div>
-</footer>
-</body>
-
-</html>
