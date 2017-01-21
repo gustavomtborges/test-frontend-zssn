@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  angular.module('app').controller('SurvivorController', SurvivorController);
+  angular.module('app').controller('SurvivorsController', SurvivorsController);
 
-  SurvivorController.$inject = ['survivorService', '$timeout', '$q'];
+  SurvivorsController.$inject = ['survivorService', '$timeout', '$q'];
 
-  function SurvivorController(survivorService, $timeout, $q) {
+  function SurvivorsController(survivorService, $timeout, $q) {
     var controller = this;
     var beginOffset = 0;
-    var endOffset = 19;
+    var endOffset = 20;
 
     // controller atributes        
     controller.survivors = [];
@@ -49,7 +49,7 @@
       var i = 0;
       var survivorsLength = (length / 20).toFixed(0);
       for (; survivorsLength > i; ++i) {
-        controller.pages.push({ number: i + 1 });
+        controller.pages.push({ number: i + 1});
       }
     }
 
@@ -73,7 +73,7 @@
     // change page
     function changePage(pageIndex) {      
       beginOffset = (pageIndex * 20);
-      endOffset = (pageIndex * 20) + 19;
+      endOffset = (pageIndex * 20) + 20;
       controller.currentPage = pageIndex;
       controller.filteredSurvivors = controller.survivors.slice(beginOffset, endOffset);
       drawMap(controller.filteredSurvivors);

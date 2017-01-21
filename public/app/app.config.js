@@ -25,8 +25,8 @@
       views: {
         'menuContent': {
           templateUrl: 'app/survivor/survivors.html',
-          controller: 'SurvivorController',
-          controllerAs: 'survivorCtrl'
+          controller: 'SurvivorsController',
+          controllerAs: 'survivorsCtrl'
         }
       }
     };
