@@ -1,0 +1,80 @@
+<div class="container">
+  <h3 class="header center grey-text text-darken-2">Add Survivor</h3>  
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <form name="createSurvivorForm" class="col s12" ng-submit="createSurvivorForm.$valid && createSurvivorCtrl.submitForm()"
+        novalidate>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input name="name" id="name" type="text" ng-model="createSurvivorCtrl.data.name" required>
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input name="age" id="age" type="number" ng-minlength="0" ng-model="createSurvivorCtrl.data.age" required>
+            <label for="age">Age</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label>Gender:</label><br/>
+            <p>
+              <input class="with-gap" value="M" name="gender" type="radio" id="masc" ng-model="createSurvivorCtrl.data.gender" required>
+              <label for="masc">Masc</label>
+            </p>
+            <p>
+              <input class="with-gap" value="F" name="gender" type="radio" id="fem" ng-model="createSurvivorCtrl.data.gender" required>
+              <label for="fem">Fem</label>
+            </p>
+          </div>
+        </div>
+        <br/>
+        <p>Inventory:</p>
+        <div class="row">
+          <div class="col s12 m4 l3">
+            Water:
+            <div class="input-field inline">
+              <input id="water" type="number" ng-model="createSurvivorCtrl.data.water" required>
+              <label for="water">Quantity</label>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            Food:
+            <div class="input-field inline">
+              <input id="food" type="number" ng-model="createSurvivorCtrl.data.food" required>
+              <label for="food">Quantity</label>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            Medication:
+            <div class="input-field inline">
+              <input id="medication" type="number" ng-model="createSurvivorCtrl.data.medication" required>
+              <label for="medication">Quantity</label>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            Ammunition:
+            <div class="input-field inline">
+              <input id="ammunition" type="number" ng-model="createSurvivorCtrl.data.ammunition" required>
+              <label for="ammunition">Quantity</label>
+            </div>
+          </div>
+        </div>
+        <p>Set your location:</p>
+        <div class="row">
+          <div class="col s12">
+            <div class="google-maps-medium" id="google-map"></div> 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12">
+            <button ng-disabled="createSurvivorForm.$invalid" class="btn waves-effect waves-light red darken-3" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>    
+  </div>
+</div>
