@@ -1,22 +1,33 @@
 <div class="container">
-  <h3 class="header center grey-text text-darken-2">Survivors</h3>  
+  <h3 class="header center grey-text text-darken-2">Survivors</h3>
   <div class="row">
-    <div class="col s12">
+    <div class="col s12 right-align">
       <a ui-sref="menu.createSurvivor" class="waves-effect waves-light btn red darken-1">Add survivor</a>
     </div>
   </div>
   <div class="divider"></div>
+  <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" ng-model="survivorsCtrl.searchString" ng-change="survivorsCtrl.filterSurvivorsList()">
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
   <div class="section">
     <div class="row">
-      <div class="col s12 m6 l6" ng-repeat="survivor in survivorsCtrl.filteredSurvivors">
+      <div class="col s12 m6 l6" ng-repeat="survivor in survivorsCtrl.filteredSurvivors | filter: survivorsCtrl.searchString">
         <div class="card">
           <div class="card-content">
             <p>Name: {{survivor.name}}</p>
             <p>Age: {{survivor.age}}</p>
             <p>Gender: {{survivor.gender}}</p>
-            <a href="#!" title="Infected" ng-if="'survivor.infected?'"><i class="material-icons red-text">warning</i></a>
+            <a href="#!" title="Infected" ng-if="survivor.infected"><i class="material-icons red-text">warning</i></a>
             <p>Location:</p>
-          </div>          
+          </div>
           <div class="card-image">
             <div class="google-maps-small" ng-show="survivor.lonlat" id="{{survivor.location}}"></div>
             <div ng-show="!survivor.lonlat">
@@ -30,12 +41,16 @@
       </div>
     </div>
   </div>
-  <ul class="pagination">
-    <li class="waves-effect" ng-class="{'disabled' : survivorsCtrl.currentPage === 0 }"><a href="#!"><i  class="material-icons">chevron_left</i></a></li>
+</div>
+<div class="row">
+  <div class="col s12">
+    <ul class="pagination">
+      <li class="waves-effect" ng-class="{'disabled' : survivorsCtrl.currentPage === 0 }"><a href="#!" ng-click="survivorsCtrl.previousPage()"><i  class="material-icons">chevron_left</i></a></li>
 
-    <li class="waves-effect" ng-class="{'active': survivorsCtrl.currentPage === $index }" ng-repeat="page in   survivorsCtrl.pages"
-      ng-click="survivorsCtrl.changePage($index);"><a>{{page.number}}</a></li>
+      <li class="waves-effect" ng-class="{'active': survivorsCtrl.currentPage === $index }" ng-repeat="page in survivorsCtrl.pages"
+        ng-click="survivorsCtrl.changePage($index);"><a href="#!">{{page.number}}</a></li>
 
-    <li class="waves-effect" ng-class="{'disabled': survivorsCtrl.currentPage === (survivorsCtrl.pages.length -1) }"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
+      <li class="waves-effect" ng-class="{'disabled': survivorsCtrl.currentPage === (survivorsCtrl.pages.length -1) }"><a href="#!" ng-click="survivorsCtrl.nextPage()"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+  </div>
 </div>
