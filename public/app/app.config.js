@@ -71,7 +71,6 @@
     $stateProvider.state('menu.updateSurvivor', updateSurvivorState);
     $stateProvider.state('menu.reports', reportsState);
 
-    $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise('/');    
   }
 })();
