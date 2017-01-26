@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper">
     <div class="col s12">      
-      <a href="#!" class="breadcrumb">&nbsp;&nbsp;Survivors</a>
+      <a href="" class="breadcrumb">&nbsp;&nbsp;Survivors</a>
     </div>
   </div>
 </nav>
@@ -32,7 +32,7 @@
             <p>Name: {{survivor.name}}</p>
             <p>Age: {{survivor.age}}</p>
             <p>Gender: {{survivor.gender}}</p>
-            <a href="#!" title="Infected" ng-if="survivor.infected"><i class="material-icons red-text">warning</i></a>
+            <a href="" title="Infected" ng-if="survivor.infected"><i class="material-icons red-text">warning</i></a>
             <p>Location:</p>
           </div>
           <div class="card-image">
@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="card-action">
-            <a href="#!" ng-click="survivorsCtrl.updateSurvivor(survivor)">Update survivor</a>
+            <a href="" ng-click="survivorsCtrl.updateSurvivor(survivor)">Update survivor</a>
           </div>
         </div>
       </div>
@@ -52,12 +52,12 @@
 <div class="row">
   <div class="col s12">
     <ul class="pagination">
-      <li class="waves-effect" ng-class="{'disabled' : survivorsCtrl.currentPage === 0 }"><a href="#!" ng-click="survivorsCtrl.previousPage()"><i  class="material-icons">chevron_left</i></a></li>
+      <li class="waves-effect" ng-class="{'disabled' : survivorsCtrl.currentPage === 0 }"><a href="" ng-click="survivorsCtrl.previousPage()"><i  class="material-icons">chevron_left</i></a></li>
 
       <li class="waves-effect" ng-class="{'active': survivorsCtrl.currentPage === $index }" ng-repeat="page in survivorsCtrl.pages"
-        ng-click="survivorsCtrl.changePage($index);"><a href="#!">{{page.number}}</a></li>
+        ng-click="survivorsCtrl.changePage($index);"><a href="">{{page.number}}</a></li>
 
-      <li class="waves-effect" ng-class="{'disabled': survivorsCtrl.currentPage === (survivorsCtrl.pages.length -1) }"><a href="#!" ng-click="survivorsCtrl.nextPage()"><i class="material-icons">chevron_right</i></a></li>
+      <li class="waves-effect" ng-class="{'disabled': survivorsCtrl.currentPage === (survivorsCtrl.pages.length -1) }"><a href="" ng-click="survivorsCtrl.nextPage()"><i class="material-icons">chevron_right</i></a></li>
     </ul>
   </div>
 </div>
