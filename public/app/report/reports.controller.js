@@ -128,7 +128,7 @@
         ['Food', items.food / items.totalSurvivors],
         ['Ammunition', items.ammo / items.totalSurvivors],
         ['Medication', items.medic / items.totalSurvivors]
-      ]);      
+      ]);
 
       // Set chart options
       var options = {
@@ -223,8 +223,11 @@
     function fetchAllSurvivorsSuccess(response) {
       var deferred = $q.defer();
       var survivorIds = response.data.map(function (value) {
-        return value.location.split('/')[5];
+        if (!value['infected?']) {
+          return value.location.split('/')[5];
+        }
       });
+      survivorIds = survivorIds.filter(Boolean);
       controller.totalSurvivors = survivorIds.length;
       deferred.resolve(survivorIds);
 
