@@ -10,6 +10,7 @@
 
     service.fetch = fetch;
     service.create = create;
+    service.fetchItems = fetchItems;
 
     /**
      * fetch all survivors
@@ -42,6 +43,14 @@
           items: survivor.items
         }
       });
+    }
+
+    /**
+     * fetch items from a survivor
+     * 
+     */
+    function fetchItems(survivor_id) {
+      return $http.get(ZSSN_API + '/people/' + survivor_id + '/properties.json');
     }
   }
 })();
