@@ -6,7 +6,7 @@
   configBlock.$inject = ['$stateProvider', '$urlRouterProvider',
     '$sceDelegateProvider'];
   
-  function configBlock($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
+  function configBlock($stateProvider, $urlRouterProvider) {
     var menuState = {
       abstract: true,
       templateUrl: 'public/app/template/menu.html'
@@ -73,10 +73,5 @@
     $stateProvider.state('menu.reports', reportsState);
 
     $urlRouterProvider.otherwise('/');    
-    $sceDelegateProvider.resourceUrlWhitelist([
-    // Allow same origin resource loads.
-    'self',    
-    'http://zssn-backend-example.herokuapp.com/**/*'
-  ]);
   }
 })();
