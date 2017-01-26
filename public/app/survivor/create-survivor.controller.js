@@ -96,7 +96,7 @@
      * 
      */
     function getLocationError() {
-      alert('we could not get your current location :(');
+      alert('we couldn\'t get your current location :(');
     }
 
     /**
