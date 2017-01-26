@@ -10,6 +10,7 @@
 
     service.fetch = fetch;
     service.create = create;
+    service.update = update;
     service.fetchItems = fetchItems;
 
     /**
@@ -41,6 +42,30 @@
           'person[gender]': survivor.gender,
           'person[lonlat]': survivor.lonlat,
           items: survivor.items
+        }
+      });
+    }
+
+    /**
+     * update survivor
+     * 
+     */
+    function update(survivor) {
+      return $http({
+        method: 'PATCH',
+        url: ZSSN_API + '/people/'+ survivor.id +'.json',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+        transformRequest: function (obj) {
+          var str = [];
+          for (var p in obj)
+            str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+          return str.join('&');
+        },
+        data: {
+          'person[name]': survivor.name,
+          'person[age]': survivor.age,
+          'person[gender]': survivor.gender,
+          'person[lonlat]': survivor.lonlat
         }
       });
     }

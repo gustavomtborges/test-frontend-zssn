@@ -3,9 +3,10 @@
 
   angular.module('app').controller('SurvivorsController', SurvivorsController);
 
-  SurvivorsController.$inject = ['survivorService', '$timeout', '$q', '$scope'];
+  SurvivorsController.$inject = ['survivorService', '$timeout', '$q', '$state',
+    '$sessionStorage'];
 
-  function SurvivorsController(survivorService, $timeout, $q) {
+  function SurvivorsController(survivorService, $timeout, $q, $state, $sessionStorage) {
     var controller = this;
     var beginOffset = 0;
     var endOffset = 20;
@@ -15,6 +16,7 @@
     controller.pages = [];
     controller.currentPage = 0;
     controller.searchString = '';
+    controller.updateSurvivor = updateSurvivor;
 
     // controller functions
     controller.changePage = changePage;
@@ -74,6 +76,8 @@
             var latlng = array[i].lonlat.split(' ');
             var lat = Number(latlng[1].split('(')[1]);
             var lng = Number(latlng[2].split(')')[0]);
+            controller.survivors[i].lat = lat;
+            controller.survivors[i].lng = lng;
 
             // set map
             var map = new google.maps.Map(document.getElementById(array[i].location), {
@@ -130,6 +134,16 @@
       controller.pages = [];
       calculatePageNumbers(newListSurvivors.length);
       drawMap(controller.filteredSurvivors);
-    }    
+    }
+
+    /**
+     * update survivor
+     * 
+     */
+    function updateSurvivor(survivor) {
+      $sessionStorage.survivor = survivor;
+      $state.go('menu.updateSurvivor');
+    }
+        
   }
 })();

@@ -42,6 +42,17 @@
       }
     };
 
+    var updateSurvivorState = {
+      url: '/survivor/update',      
+      views: {
+        'menuContent': {
+          templateUrl: 'app/survivor/update-survivor.html',
+          controller: 'UpdateSurvivorController',
+          controllerAs: 'updateSurvivorCtrl'
+        }
+      }
+    };
+
     var reportsState = {
       url: '/reports',
       views: {
@@ -57,6 +68,7 @@
     $stateProvider.state('menu.home', homeState);
     $stateProvider.state('menu.survivors', survivorState);
     $stateProvider.state('menu.createSurvivor', createSurvivorState);
+    $stateProvider.state('menu.updateSurvivor', updateSurvivorState);
     $stateProvider.state('menu.reports', reportsState);
 
     $urlRouterProvider.otherwise('/');
