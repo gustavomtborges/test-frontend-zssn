@@ -8,14 +8,14 @@
   function configBlock($stateProvider, $urlRouterProvider) {
     var menuState = {
       abstract: true,
-      templateUrl: 'test-frontend-zssn/public/app/template/menu.html'
+      templateUrl: 'public/app/template/menu.html'
     };
 
     var homeState = {
       url: '/',
       views: {
         'menuContent': {
-          templateUrl: 'test-frontend-zssn/public/app/home/home.html'
+          templateUrl: 'public/app/home/home.html'
         }
       }      
     };
@@ -24,7 +24,7 @@
       url: '/survivors',
       views: {
         'menuContent': {
-          templateUrl: 'test-frontend-zssn/public/app/survivor/survivors.html',
+          templateUrl: 'public/app/survivor/survivors.html',
           controller: 'SurvivorsController',
           controllerAs: 'survivorsCtrl'
         }
@@ -35,7 +35,7 @@
       url: '/survivor/create',
       views: {
         'menuContent': {
-          templateUrl: 'test-frontend-zssn/public/app/survivor/create-survivor.html',
+          templateUrl: 'public/app/survivor/create-survivor.html',
           controller: 'CreateSurvivorController',
           controllerAs: 'createSurvivorCtrl'
         }
@@ -46,7 +46,7 @@
       url: '/survivor/update',      
       views: {
         'menuContent': {
-          templateUrl: 'test-frontend-zssn/public/app/survivor/update-survivor.html',
+          templateUrl: 'public/app/survivor/update-survivor.html',
           controller: 'UpdateSurvivorController',
           controllerAs: 'updateSurvivorCtrl'
         }
@@ -57,7 +57,7 @@
       url: '/reports',
       views: {
         'menuContent': {
-          templateUrl: 'test-frontend-zssn/public/app/report/reports.html',
+          templateUrl: 'public/app/report/reports.html',
           controller: 'ReportsController',
           controllerAs: 'reportsCtrl'
         }
