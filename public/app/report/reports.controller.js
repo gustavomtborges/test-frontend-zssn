@@ -107,11 +107,7 @@
       } else {
         fetchAllSurvivors()
           .then(calculateItemsPerKind)
-          .then(drawAverageItemsPieChart)
-          .catch(function (error) {
-            Materialize.toast('Error on get average items by kind!', 3000);
-            console.log(error);
-          });
+          .then(drawAverageItemsPieChart);          
       }
     }
 
@@ -211,6 +207,11 @@
         .then(fetchAllSurvivorsSuccess)
         .then(function (survivorIds) {
           deferred.resolve(survivorIds);
+        })
+        .catch(function (error) {
+          controller.doneItemsChart = true;
+          Materialize.toast('Error on get average items by kind!', 3000);
+          console.log(error);
         });
 
       return deferred.promise;
