@@ -20,9 +20,9 @@
     controller.changePage = changePage;
     controller.filterSurvivorsList = filterSurvivorsList;
     controller.previousPage = previousPage;
-    controller.nextPage = nextPage;
+    controller.nextPage = nextPage;    
 
-    // api call to fetch survivors
+    // fetch all survivors
     survivorService.fetch()
       .then(fetchSurvivorsSucsess)
       .then(drawMap)
@@ -130,6 +130,6 @@
       controller.pages = [];
       calculatePageNumbers(newListSurvivors.length);
       drawMap(controller.filteredSurvivors);
-    }
+    }    
   }
 })();
