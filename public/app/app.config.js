@@ -42,10 +42,22 @@
       }
     };
 
+    var reportsState = {
+      url: '/reports',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/report/reports.html',
+          controller: 'ReportsController',
+          controllerAs: 'reportsCtrl'
+        }
+      }
+    };
+
     $stateProvider.state('menu', menuState);
     $stateProvider.state('menu.home', homeState);
     $stateProvider.state('menu.survivors', survivorState);
     $stateProvider.state('menu.createSurvivor', createSurvivorState);
+    $stateProvider.state('menu.reports', reportsState);
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);

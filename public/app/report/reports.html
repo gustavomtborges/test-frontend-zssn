@@ -1,0 +1,62 @@
+<div class="container">
+  <h3 class="header center grey-text text-darken-2">Reports</h3>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a class="active" href="#infected">infected survivors</a></li>
+          <li class="tab col s3"><a href="#resource">resource by survivor</a></li>
+          <li class="tab col s3"><a href="#points">Points losed</a></li>
+        </ul>
+      </div>
+
+      <div id="infected" class="col s12">
+        <br/>
+        <h5 class="header center grey-text text-darken-2">Percentage of infected survivors</h5>
+        <br/><br/>
+        <div class="col s12">
+          <div id="chart_infected"></div>
+</div>
+</div>
+
+<div id="resource" class="col s12">
+  <br/>
+  <h5 class="header center grey-text text-darken-2">Average of each kind item per survivor</h5>
+  <br/><br/>
+
+  <div class="row">
+    <div class="col s12 valign center">
+      <div class="preloader-wrapper big active" ng-hide="reportsCtrl.doneItemsChart">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12">
+    <div id="chart_averageItems"></div>
+</div>
+</div>
+
+<div id="points" class="col s12">
+  <br/>
+  <h5 class="header center grey-text text-darken-2">Points losed because of infected survivors</h5>
+  <br/><br/>
+  <div>
+    <h2 class="center">{{reportsCtrl.pointsLost}} points</h2>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
